@@ -4,6 +4,7 @@ import { ShopContext } from '../Context/ShopContext';
 import dropdown_icon from '../assets/dropdown_icon.png';
 import Item from '../Items/Item';
 
+
 function ShopCategory(props) {
   const { all_product } = useContext(ShopContext);
   
@@ -32,6 +33,9 @@ function ShopCategory(props) {
             old_price={item.old_price}
           />
         ))}
+      </div>
+      <div className="explore">
+        Explore More
       </div>
     </div>
   );

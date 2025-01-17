@@ -1,0 +1,70 @@
+/* LoginSignup.css */
+
+.loginsignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(180deg,#fde1ff 0%,#e1ffea22 60%);
+  }
+  
+  .loginsignup-container {
+    background: linear-gradient(180deg,#fde1ff 0%,#e1ffea22 60%);
+    padding: 40px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 400px; /* Fixed width for the form */
+  }
+  
+  h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+  }
+  
+  .loginsignup-fields {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+  }
+  
+ .loginsignup-fields input[type='text'], input[type='email'] ,input[type='Password'] {
+    padding: 10px; /* Padding inside input fields */
+    margin-bottom: 15px; /* Space between input fields */
+    border: 1px solid #ccc; /* Light border around inputs */
+    border-radius: 4px; /* Slightly rounded corners for inputs */
+  }
+  
+  
+  
+  
+  button {
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+    background-color: #e70a18; /* Primary button color */
+    color: white; /* Text color for button */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+ 
+  
+  .loginsignup-login {
+    text-align: center;
+    margin-top: 15px; /* Space above login prompt */
+  }
+  
+  .loginsignup-login span {
+    color: #007bff; /* Link color for "Login here" text */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+  }
+  
+  .loginsignup-agree {
+    display: flex;
+    align-items: center; /* Align checkbox and text vertically */
+  }
+  
+  .loginsignup-agree input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and text */
+  }
+  
