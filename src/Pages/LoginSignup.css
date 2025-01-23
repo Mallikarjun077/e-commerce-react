@@ -4,16 +4,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
     height: 100vh; /* Full viewport height */
     background: linear-gradient(180deg,#fde1ff 0%,#e1ffea22 60%);
   }
   
   .loginsignup-container {
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(180deg,#fde1ff 0%,#e1ffea22 60%);
     padding: 40px;
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    width: 400px; /* Fixed width for the form */
+    width: 500px; /* Fixed width for the form */
   }
   
   h1 {
@@ -26,11 +29,14 @@
     flex-direction: column; /* Stack inputs vertically */
   }
   
- .loginsignup-fields input[type='text'], input[type='email'] ,input[type='Password'] {
+ .input{
     padding: 10px; /* Padding inside input fields */
     margin-bottom: 15px; /* Space between input fields */
     border: 1px solid #ccc; /* Light border around inputs */
     border-radius: 4px; /* Slightly rounded corners for inputs */
+    height: 30px;
+    border-radius: 20px;
+    font-size: 15px;
   }
   
   
@@ -38,12 +44,13 @@
   
   button {
     padding: 10px;
-    width: 400px;
+    width: 100px;
+    font-size: 15px;
     text-align: center;
     background-color: #e70a18; /* Primary button color */
     color: white; /* Text color for button */
     border: none; /* Remove default border */
-    border-radius: 4px; /* Rounded corners for button */
+    border-radius: 20px; /* Rounded corners for button */
     cursor: pointer; /* Pointer cursor on hover */
   }
   
