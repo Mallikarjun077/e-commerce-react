@@ -18,3 +18,5 @@ function Shop() {
 }
 
 export default Shop
+
+//end
