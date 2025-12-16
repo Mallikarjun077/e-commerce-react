@@ -13,15 +13,17 @@ function LoginSignup() {
     password: "",
   });
 
-  // Regex patterns
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // Minimum 8 characters, 1 letter, 1 number
+  // ✅ Correct regex patterns
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  ;
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=\[{\]};:'",<.>/?\\|`~]).{8,}$/;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Validate email in real-time
+    // Email validation
     if (name === "email") {
       if (!emailRegex.test(value)) {
         setErrors((prev) => ({ ...prev, email: "Invalid email format!" }));
@@ -30,13 +32,13 @@ function LoginSignup() {
       }
     }
 
-    // Validate password in real-time
+    // Password validation
     if (name === "password") {
       if (!passwordRegex.test(value)) {
         setErrors((prev) => ({
           ...prev,
           password:
-            "Password must be at least 8 characters, with at least 1 letter and 1 number.",
+            "Password must be at least 8 characters, include 1 uppercase, 1 lowercase, 1 number, and 1 special character.",
         }));
       } else {
         setErrors((prev) => ({ ...prev, password: "" }));
@@ -49,12 +51,17 @@ function LoginSignup() {
 
     if (!formData.name || !formData.email || !formData.password) {
       alert("All fields are required!");
-    } else if (errors.email || errors.password) {
-      alert("Please fix the validation errors!");
-    } else {
-      console.log("Form submitted:", formData);
-      alert("Sign up successful!");
+      return;
     }
+
+    if (errors.email || errors.password) {
+      alert("Please fix the validation errors before submitting.");
+      return;
+    }
+
+    console.log("Form submitted:", formData);
+    alert("Sign up successful!");
+    setFormData({ name: "", email: "", password: "" });
   };
 
   return (
@@ -70,6 +77,7 @@ function LoginSignup() {
             value={formData.name}
             onChange={handleChange}
           />
+
           <input
             type="email"
             name="email"
@@ -79,6 +87,7 @@ function LoginSignup() {
             onChange={handleChange}
           />
           {errors.email && <p className="error">{errors.email}</p>}
+
           <input
             type="password"
             name="password"
@@ -88,8 +97,10 @@ function LoginSignup() {
             onChange={handleChange}
           />
           {errors.password && <p className="error">{errors.password}</p>}
+
           <button type="submit">Continue</button>
         </form>
+
         <p className="loginsignup-login">
           Already have an Account? <span>Login here</span>
         </p>
